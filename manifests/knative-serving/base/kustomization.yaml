@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
 - upstream/serving-crds.yaml
 - upstream/serving-core.yaml
+- upstream/net-isio.yaml

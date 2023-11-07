@@ -4,4 +4,3 @@ kind: Kustomization
 resources:
 - upstream/istio-crds.yaml
 - upstream/istio.yaml
-- upstream/net-istio.yaml
