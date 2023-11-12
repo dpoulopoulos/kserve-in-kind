@@ -48,18 +48,18 @@ Follow the steps below to install KServe on a kind cluster:
    kind create cluster --config kind/config.yaml
    ```
 
+1. Install Istio:
+
+   ```shell
+   kubectl apply -k manifests/istio/base/
+   ```
+
 1. Install knative-serving:
    ```shell
    kubectl apply -k manifests/knative-serving/overlays/kind
    ```
 
     > This command attempts to deploy Knative Serving; however, some components may fail to install initially due to missing CRDs (Custom Resource Definitions). Running the command a second time should resolve the issue. This is a common procedure that you can follow when you install other components of the cluster, like Istio and KServe.
-
-1. Install Istio:
-
-   ```shell
-   kubectl apply -k manifests/istio/base/
-   ```
 
 1. Install cert-manager:
 
@@ -79,7 +79,7 @@ Follow the steps below to install KServe on a kind cluster:
 
     ```shell
     export IP_ADDRESS_RANGE=$(
-        docker network inspect -f '{{.IPAM.Config}}' kind 
+        docker network inspect -f '{{.IPAM.Config}}' kind \
         | tr -d '[]{}' \
         | awk -F' ' '{print $1}' \
         | sed -E 's/([0-9]+\.[0-9]+)\.[0-9]+(\.[0-9]+\/[0-9]+)/\1.100\2/' \
