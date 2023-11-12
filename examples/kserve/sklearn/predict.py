@@ -12,7 +12,7 @@ if __name__ == "__main__":
     with open("iris-input.json", "r") as f:
         data = json.load(f)
 
-    headers = {"Host":"sklearn-iris.default.example.com"}
+    headers = {"Host": "sklearn-iris.default.example.com"}
 
     res = requests.post(URL, json=data, headers=headers)
 
