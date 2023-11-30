@@ -51,7 +51,7 @@ Follow the steps below to install KServe on a kind cluster:
 1. Install Istio:
 
    ```shell
-   kubectl apply -k manifests/istio/base/
+   kubectl apply -k manifests/istio/overlays/kind
    ```
 
 1. Install knative-serving:
