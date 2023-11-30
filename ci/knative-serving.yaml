@@ -20,6 +20,6 @@ spec:
   source:
     path: manifests/knative-serving/overlays/kind
     repoURL: https://github.com/dpoulopoulos/kserve-in-kind
-    targetRevision: feature-argocd
+    targetRevision: main
   syncPolicy:
     automated: {}

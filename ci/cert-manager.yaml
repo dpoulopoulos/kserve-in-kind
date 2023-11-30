@@ -11,6 +11,6 @@ spec:
   source:
     path: manifests/cert-manager/base
     repoURL: https://github.com/dpoulopoulos/kserve-in-kind
-    targetRevision: feature-argocd
+    targetRevision: main
   syncPolicy:
     automated: {}
