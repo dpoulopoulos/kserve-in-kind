@@ -54,23 +54,16 @@ Follow the steps below to install KServe on a kind cluster:
    kubectl apply -k manifests/istio/overlays/kind
    ```
 
-1. Install knative-serving:
+1. Install ArgoCD:
+
    ```shell
-   kubectl apply -k manifests/knative-serving/overlays/kind
+   kubectl apply -k manifests/argocd/overlays/kind
    ```
 
-    > This command attempts to deploy Knative Serving; however, some components may fail to install initially due to missing CRDs (Custom Resource Definitions). Running the command a second time should resolve the issue. This is a common procedure that you can follow when you install other components of the cluster, like Istio and KServe.
-
-1. Install cert-manager:
-
-    ```shell
-    kubectl apply -k manifests/cert-manager/base/
-    ```
-
-1. Install KServe:
+1. Install Cert Manager, Knative, and KServe:
 
    ```shell
-   kubectl apply -k manifests/kserve/base/
+   kubectl apply -f ci
    ```
 
 1. Install and configure MetalLB:
